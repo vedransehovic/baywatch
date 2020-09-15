@@ -1,0 +1,2 @@
+class BaysController < ApplicationController
+end

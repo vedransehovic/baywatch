@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bay_number: 1
+  date: 2020-09-15
+  production_id: 1
+  user_id: 1
+  active: false
+
+two:
+  bay_number: 1
+  date: 2020-09-15
+  production_id: 1
+  user_id: 1
+  active: false
