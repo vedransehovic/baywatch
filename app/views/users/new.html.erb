@@ -1,0 +1,21 @@
+<h1>New User:</h1>
+
+<%= form_with model: @user, class: "nifty_form" do |f| %>
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+    <br><br>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+    <br><br>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+    <br><br>
+    <%= f.label :phone %>
+    <%= f.text_field :phone %>
+    <br><br>
+    <%= f.label :is_admin %>
+    <%= f.check_box :is_admin %>
+    <br><br>
+    <%= f.submit %>
+
+<% end %>
