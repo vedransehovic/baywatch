@@ -24,8 +24,22 @@ class UsersController < ApplicationController
         set_user
     end
 
+    def update
+        set_user
+        if @user.update(user_params)
+            redirect_to user_path
+        else
+            render :edit
+        end
+    end
+
     def delete
         set_user
+        if @user.delete
+            redirect_to users_path
+        else
+            @error = "User could not be deleted!"
+        end
     end
 
     private
