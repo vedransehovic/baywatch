@@ -1,2 +1,40 @@
-class UsersController < ApplicationController
+class UsersController < ApplicationController   
+    def index
+        @users = User.all
+    end
+
+    def show
+        set_user
+    end
+
+    def new
+        @user = User.new
+    end
+
+    def create
+        @user = User.new(user_params)
+        if @user.save
+            redirect_to users_path
+        else
+            render :new
+        end
+    end
+
+    def edit 
+        set_user
+    end
+
+    def delete
+        set_user
+    end
+
+    private
+
+    def set_user
+        @user = User.find_by_id(params[:id])
+    end
+
+    def user_params
+        params.require(:user).permit(:username, :email, :phone, :password, :is_admin)
+    end
 end
