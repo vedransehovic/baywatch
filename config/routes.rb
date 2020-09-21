@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   resources :productions
   resources :users
   resources :bays
+  get '/bays/reset/:id', to: 'bays#reset'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

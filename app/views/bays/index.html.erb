@@ -1,0 +1,7 @@
+<h1>Bays:</h1>
+
+<ul>
+<% @bays.each do |bay|%>
+<li><%= link_to bay.bay_number, bay_path(bay) %> | <%= link_to 'edit', edit_bay_path(bay)%> </li>
+<%end%>
+</ul>

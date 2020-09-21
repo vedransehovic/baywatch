@@ -1,0 +1,12 @@
+<%= form_for @bay do |f|%>
+    <%=f.label :bay_number %>
+    <%= f.number_field :bay_number %>
+    <br><br>
+    <%= f.label :date %>
+    <%= f.date_field :date %>
+    <br><br>
+    <%= f.label :active %>
+    <%= f.check_box :active %>
+    <br><br>
+    <%= f.submit %>
+<%end%>

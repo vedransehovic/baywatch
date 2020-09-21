@@ -1,0 +1,11 @@
+<h1>Show Bay:</h1>
+<p>
+<%=link_to 'reset bay', "/bays/reset/#{@bay.id}"%> 
+<%= link_to 'edit bay', edit_bay_path(@bay)%>
+</p>
+
+Bay Number: <%= @bay.bay_number %>
+<br>
+Date: <%= @bay.date %>
+<br>
+Active: <%= @bay.active %>
