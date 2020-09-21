@@ -1,0 +1,9 @@
+<h1>All Clients:</h1>
+<p>
+<%= link_to "new client", new_client_path%>
+</p>
+<ul>
+<% @clients.each do |client|%>
+<li><%= link_to client.name, client_path(client) %> | <%= link_to 'edit', edit_client_path(client) %> <%= link_to 'delete', client_path(client), method: 'DELETE'%> </li>
+<%end%>
+</ul>

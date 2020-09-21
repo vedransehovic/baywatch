@@ -8,11 +8,11 @@ class ProductionsController < ApplicationController
     end
 
     def new
-        @production = production.new
+        @production = Production.new
     end
 
     def create
-        @production = production.new(production_params)
+        @production = Production.new(production_params)
         if @production.save
             redirect_to productions_path
         else

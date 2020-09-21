@@ -1,0 +1,12 @@
+<h1>Client: <%= @client.name %> </h1>
+<p> 
+<%= link_to '<< all clients', clients_path %>
+<%= link_to 'edit', edit_client_path(@client) %>
+<%= link_to 'delete', client_path(@client), method: 'DELETE'%>
+</p>
+
+Client Address: <%= @client.address%>
+<br>
+Client Phone: <%= @client.phone%>
+<br>
+Client Email: <%= @client.email%>

@@ -1,0 +1,9 @@
+<h1>Production: </h1>
+<p><%= link_to 'all productions', productions_path %> </p>
+<b>Production Name: </b> <%= @production.name %>
+<br>
+<b>Production Address: </b> <%= @production.address %>
+<br>
+<b>Production Phone: </b>  <%= @production.phone %>
+<br><br>
+<%= button_to 'edit production', edit_production_path %>

@@ -1,0 +1,7 @@
+<h1>Productions:</h1>
+<%= link_to 'new production', new_production_path %>
+<ul>
+<% @productions.each do |production| %>
+    <li><%= link_to production.name, production_path(production) %> | <%= link_to 'edit', edit_production_path(production)%> <%= link_to 'delete', production_path(production), method: 'DELETE'%> </li>
+<%end%>
+</ul>
