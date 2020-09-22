@@ -9,6 +9,7 @@ class ProductionsController < ApplicationController
 
     def new
         @production = Production.new
+        @production.clients.new
     end
 
     def create
@@ -33,7 +34,7 @@ class ProductionsController < ApplicationController
         end
     end
 
-    def delete
+    def destroy
         set_production
         if @production.delete
             redirect_to productions_path
@@ -49,6 +50,6 @@ class ProductionsController < ApplicationController
     end
 
     def production_params
-        params.require(:production).permit(:name, :address, :phone)
+        params.require(:production).permit(:name, :address, :phone, clients_attributes: [:first_name, :last_name, :address, :phone, :email ])
     end
 end

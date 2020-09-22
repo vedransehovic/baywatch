@@ -5,5 +5,9 @@
 <b>Production Address: </b> <%= @production.address %>
 <br>
 <b>Production Phone: </b>  <%= @production.phone %>
+<br>
+<p>
+<%= @production.clients.first_name%>
+</p>
 <br><br>
 <%= button_to 'edit production', edit_production_path %>
