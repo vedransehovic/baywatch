@@ -1,5 +1,13 @@
 class ClientsController < ApplicationController
     def index
+        if params[:production_id]
+          @posts = Production.find(params[:production_id]).posts
+        else
+          @posts = Post.all
+        end
+    end
+   
+    def index
         @clients = Client.all
     end
 
@@ -27,7 +35,11 @@ class ClientsController < ApplicationController
     def update
         set_client
         if @client.update(client_params)
-            redirect_to client_path 
+            if params[:production_id]
+                redirect_to production_path(params[:production_id])
+            else
+                redirect_to client_path 
+            end
         else
             render :edit
         end
@@ -36,7 +48,11 @@ class ClientsController < ApplicationController
     def destroy
         set_client
         @client.delete
-        redirect_to clients_path
+        if params[:production_id]
+            redirect_to production_path(params[:production_id])
+        else
+            redirect_to clients_path
+        end
     end
 
     private

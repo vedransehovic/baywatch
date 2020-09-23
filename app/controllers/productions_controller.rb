@@ -23,6 +23,7 @@ class ProductionsController < ApplicationController
 
     def edit 
         set_production
+        @clients = @production.clients
     end
 
     def update

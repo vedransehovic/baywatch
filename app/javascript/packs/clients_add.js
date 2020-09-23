@@ -1,7 +1,8 @@
 document.addEventListener("DOMContentLoaded", ()=>{
 var counter = 1;
 var limit = 10;
-function addInput(){
+function addInput(event){
+     event.preventDefault()
      if (counter == limit)  {
           alert("You have reached the limit of adding " + counter + " inputs");
      }

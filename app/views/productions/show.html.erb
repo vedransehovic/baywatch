@@ -7,7 +7,11 @@
 <b>Production Phone: </b>  <%= @production.phone %>
 <br>
 <p>
-<%= @production.clients.first_name%>
+<ul>
+<% @production.clients.each do |client|%>
+    <li><%= client.name %></li>
+<%end%>
+</ul>
 </p>
 <br><br>
-<%= button_to 'edit production', edit_production_path %>
+<%= button_to 'edit production', edit_production_path, method: 'get' %>
