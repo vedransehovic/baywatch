@@ -1,3 +1,20 @@
+
+<%= javascript_pack_tag 'clients_add.js' %>
+
 <h1>New Production:</h1>
 
 <%= render 'form' %>
+
+<form method="POST">
+     <div id="dynamicInput">
+    <label for="production_clients_attributes_0_first_name">First name</label>
+    <input type="text" name="production[clients_attributes][0][first_name]" id="production_clients_attributes_0_first_name" />
+    <label for="production_clients_attributes_0_last_name">Last name</label>
+    <input type="text" name="production[clients_attributes][0][last_name]" id="production_clients_attributes_0_last_name" />
+
+     </div>
+</form>
+<br>
+<button id="line">Add Client</button>
+
+

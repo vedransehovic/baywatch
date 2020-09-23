@@ -8,20 +8,6 @@
     <%= f.label :phone %>
     <%= f.text_field :phone %>
     <br><br>
-    <p>
-    <%= f.fields_for :clients do |p|%>
-    <%= p.label :first_name %>
-    <%= p.text_field :first_name %>
-    <%= p.label :last_name %>
-    <%= p.text_field :last_name %>
-    <%= p.label :address %>
-    <%= p.text_field :address %>
-    <%= p.label :phone %>
-    <%= p.telephone_field :phone %>
-    <%= p.label :email %>
-    <%= p.text_field :email %>
 
-<%end%>
-    </p>
-    <%= f.submit %>
+
 <%end%>
