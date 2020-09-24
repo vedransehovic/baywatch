@@ -35,8 +35,8 @@ class ClientsController < ApplicationController
     def update
         set_client
         if @client.update(client_params)
-            if params[:production_id]
-                redirect_to production_path(params[:production_id])
+            if params[:client][:production_id]
+                redirect_to production_path(params[:client][:production_id])
             else
                 redirect_to client_path 
             end

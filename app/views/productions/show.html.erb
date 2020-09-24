@@ -7,9 +7,10 @@
 <b>Production Phone: </b>  <%= @production.phone %>
 <br>
 <p>
+<h3>Production Members:</h3>
 <ul>
 <% @production.clients.each do |client|%>
-    <li><%= client.name %></li>
+    <li><%= client.name %> | <%= link_to 'delete', production_client_path(@production, client), method: :delete %>  <%= link_to 'edit', edit_production_client_path(@production, client)%></li>
 <%end%>
 </ul>
 </p>

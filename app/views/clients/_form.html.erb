@@ -1,4 +1,7 @@
 <%= form_for @client do |f|%>
+    <% if params[:production_id]%>
+        <%= f.hidden_field :production_id, value: params[:production_id] %>
+    <%end%>
     <%= f.label :first_name %>
     <%= f.text_field :first_name %>
     <br><br>
