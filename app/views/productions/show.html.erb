@@ -1,5 +1,7 @@
-<h1>Production: </h1>
-<p><%= link_to 'all productions', productions_path %> </p>
+<h2>Production: </h2>
+<p><%= link_to 'all productions', productions_path %>  | 
+<%= link_to 'delete production', production_path(@production), method: 'DELETE'%>
+</p>
 <b>Production Name: </b> <%= @production.name %>
 <br>
 <b>Production Address: </b> <%= @production.address %>
@@ -7,7 +9,7 @@
 <b>Production Phone: </b>  <%= @production.phone %>
 <br>
 <p>
-<h3>Production Members:</h3>
+<h4>Production Members:</h4>
 <ul>
 <% @production.clients.each do |client|%>
     <li><%= client.name %> | <%= link_to 'delete', production_client_path(@production, client), method: :delete %>  <%= link_to 'edit', edit_production_client_path(@production, client)%></li>
@@ -15,4 +17,4 @@
 </ul>
 </p>
 <br><br>
-<%= button_to 'edit production', edit_production_path, method: 'get' %>
+<%= button_to 'Edit Production', edit_production_path, method: 'get' %> <br>

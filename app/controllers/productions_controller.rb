@@ -37,7 +37,7 @@ class ProductionsController < ApplicationController
 
     def destroy
         set_production
-        if @production.delete
+        if @production.destroy
             redirect_to productions_path
         else
             @error = "production could not be deleted!"

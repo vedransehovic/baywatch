@@ -8,5 +8,9 @@
     <%= f.label :active %>
     <%= f.check_box :active %>
     <br><br>
+    <%= f.label :production_id %>
+    <%= f.collection_select :production_id, @productions, :id, :name
+%>
+    <br><br>
     <%= f.submit %>
 <%end%>

@@ -1,5 +1,8 @@
 <h1>Edit Bay:</h1>
 
 <%= render 'form'%>
-<%= button_to 'Reset bay', "/bays/reset/#{@bay.id}", method: :get%>
+<%= button_to 'Reset Bay', "/bays/reset/#{@bay.id}", method: :get%>
+<%= button_to 'Delete Bay', bay_path(@bay), method: :delete%>
+
+
 

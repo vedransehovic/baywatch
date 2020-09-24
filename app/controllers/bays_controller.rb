@@ -9,6 +9,8 @@ class BaysController < ApplicationController
 
     def new
         @bay = Bay.new
+        @users = User.all
+        @productions = Production.all
     end
 
     def create 
@@ -22,10 +24,13 @@ class BaysController < ApplicationController
 
     def edit
         set_bay
+        @users = User.all
+        @productions = Production.all
     end
 
     def update
         set_bay
+        @productions = Production.all
         if @bay.update(bay_params)
             redirect_to bay_path
         else
@@ -33,7 +38,7 @@ class BaysController < ApplicationController
         end
     end
 
-    def delete 
+    def destroy 
         set_bay
         @bay.delete
         redirect_to bays_path
@@ -51,11 +56,11 @@ class BaysController < ApplicationController
     end
 
     def bay_params
-        params.require(:bay).permit(:bay_number, :date, :active)
+        params.require(:bay).permit(:bay_number, :date, :active, :production_id, :user_id)
     end
 
     def reset_bay
         set_bay
-        @bay.update(date: nil, active: nil)
+        @bay.update(date: nil, active: nil, production_id: nil, user_id: nil)
     end
 end
