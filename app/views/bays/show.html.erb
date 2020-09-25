@@ -9,3 +9,15 @@ Bay Number: <%= @bay.bay_number %>
 Date: <%= @bay.date %>
 <br>
 Active: <%= @bay.active %>
+<br>
+Production: <%if @bay.production %> <%= @bay.production.name %> <%end%>
+<br>
+Clients: <br>
+ <% if @bay.production.clients %>
+    <ul>
+    <% @bay.production.clients.each do |client|%>
+        <li><%= client.name %></li>
+    <%end%>
+    </ul>
+<%end%>
+<br>

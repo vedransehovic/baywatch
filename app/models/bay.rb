@@ -1,4 +1,4 @@
 class Bay < ApplicationRecord
-    belongs_to :user
-    belongs_to :production
+    belongs_to :user, optional: true
+    belongs_to :production, optional: true
 end

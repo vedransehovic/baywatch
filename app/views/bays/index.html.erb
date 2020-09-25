@@ -1,8 +1,28 @@
-<h1>Bays:</h1>
+<h2>Bays:</h2>
 <p><%= link_to 'new bay', new_bay_path %></p>
 
-<ul>
+<div class="d-flex p-2 flex-wrap">
 <% @bays.each do |bay|%>
-<li><%= link_to bay.bay_number, bay_path(bay) %> | <%= link_to 'edit', edit_bay_path(bay)%> </li>
+<div class="scene scene--card">
+  <div class="card">
+    <div class="card__face card__face--front">
+        <table width="100%"  cellpadding='5'>
+            <tr><td align='left'>Bay:</td><td><%= bay.bay_number%> <%= link_to 'edit', edit_bay_path(bay)%></td></tr>
+            <tr><td align="left">Production:</td><td><% if bay.production %><%= bay.production.name %><%end%></td></tr>
+            <tr><td align="left">Clients:</td><td></td></tr>
+            <tr><td colspan=2 align="left">
+                <% if bay.production && bay.production.clients %>
+                    <ul>
+                    <% bay.production.clients.each do |client|%>
+                    <li><%= client.name %></li>
+                    <%end%>
+                    </ul>
+                <%end%>
+            </td></tr>
+        </table>
+    </div>
+    <div class="card__face card__face--back">back</div>
+  </div>
+</div>
 <%end%>
-</ul>
+</div>
