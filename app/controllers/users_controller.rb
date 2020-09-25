@@ -1,4 +1,7 @@
 class UsersController < ApplicationController   
+
+    before_action :require_login
+
     def index
         @users = User.all
     end
@@ -33,7 +36,7 @@ class UsersController < ApplicationController
         end
     end
 
-    def delete
+    def destroy
         set_user
         if @user.delete
             redirect_to users_path
@@ -50,5 +53,9 @@ class UsersController < ApplicationController
 
     def user_params
         params.require(:user).permit(:username, :email, :phone, :password, :is_admin)
+    end
+
+    def require_login
+        redirect_to '/login' unless session.include? :user_id
     end
 end

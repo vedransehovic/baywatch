@@ -17,7 +17,9 @@ require("channels")
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-var card = document.querySelector('.card');
-card.addEventListener( 'click', function() {
-  card.classList.toggle('is-flipped');
+$( document ).ready(function() {
+    var card = document.querySelector('.card');
+    card.addEventListener( 'click', function() {
+    card.classList.toggle('is-flipped');
+  });
 });

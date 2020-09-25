@@ -1,4 +1,7 @@
 class BaysController < ApplicationController
+
+    before_action :require_login
+
     def index 
         @bays = Bay.all 
     end
@@ -62,5 +65,9 @@ class BaysController < ApplicationController
     def reset_bay
         set_bay
         @bay.update(date: nil, active: nil, production_id: nil, user_id: nil)
+    end
+
+    def require_login
+        redirect_to '/login' unless session.include? :user_id
     end
 end

@@ -27,7 +27,6 @@
     height: 100%;
     color: white;
     text-align: center;
-    font-weight: bold;
     font-size: 20px;
     backface-visibility: hidden;
   }
@@ -37,7 +36,7 @@
   }
   
   .card__face--back {
-    background: blue;
+    background: #990000;
     transform: rotateY(180deg);
   }
   

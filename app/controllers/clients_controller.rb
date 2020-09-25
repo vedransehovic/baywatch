@@ -1,4 +1,7 @@
 class ClientsController < ApplicationController
+
+    before_action :require_login
+
     def index
         if params[:production_id]
           @posts = Production.find(params[:production_id]).posts
@@ -63,5 +66,9 @@ class ClientsController < ApplicationController
 
     def client_params
         params.require(:client).permit(:first_name, :last_name, :address, :phone, :email)
+    end
+
+    def require_login
+        redirect_to '/login' unless session.include? :user_id
     end
 end
