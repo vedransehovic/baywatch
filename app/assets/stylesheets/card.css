@@ -39,4 +39,14 @@
     background: #990000;
     transform: rotateY(180deg);
   }
+
+  .card_menu_bottom {
+    position : absolute;
+    bottom   : 0;
+  }
+
+  a.card_menu_bottom:link { color:#FFF; text-decoration:none;}
+  a.card_menu_bottom:visited { color: #FFF; text-decoration:none;}
+  a.card_menu_bottom:hover { color: #FFF; text-decoration:underline; }
+
   

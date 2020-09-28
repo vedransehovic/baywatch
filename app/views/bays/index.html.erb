@@ -7,7 +7,7 @@
   <div class="card">
     <div class="card__face card__face--front">
         <table width="100%"  cellpadding='5'>
-            <tr><td align='left'>Bay:</td><td><%= bay.bay_number%> <%= link_to 'edit', edit_bay_path(bay)%></td></tr>
+            <tr><td align='left'>Bay:</td><td><%= bay.bay_number%></td></tr>
             <tr><td align="left">Production:</td><td><% if bay.production %><%= bay.production.name %><%end%></td></tr>
             <tr><td align="left">Clients:</td><td></td></tr>
             <tr><td colspan=2 align="left">
@@ -20,6 +20,10 @@
                 <%end%>
             </td></tr>
         </table>
+        <div class="card_menu_bottom">
+          <%= link_to 'edit', edit_bay_path(bay)%> 
+         <%= link_to 'reset', "/bays/reset/#{bay.id}" %>
+        </div>
     </div>
     <div class="card__face card__face--back">chat</div>
   </div>

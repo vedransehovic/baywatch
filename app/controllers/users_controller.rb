@@ -56,6 +56,15 @@ class UsersController < ApplicationController
     end
 
     def require_login
-        redirect_to '/login' unless session.include? :user_id
+        #redirect_to '/login' unless session.include? :user_id && current_user.is_admin==true
+        if !session.include? :user_id
+            session[:error] = "You must be logged in as an admin"
+            redirect_to '/login'
+        else
+            if current_user.is_admin==false || current_user.is_admin==nil
+                session[:error] = "You must be logged in as an admin"
+                redirect_to '/login'
+            end
+        end
     end
 end
