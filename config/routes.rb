@@ -18,6 +18,9 @@ Rails.application.routes.draw do
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
 
+  #Google auth callback
+  get '/auth/google_oauth2/callback', to: 'sessions#omniauth'
+
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
