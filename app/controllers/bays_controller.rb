@@ -49,7 +49,7 @@ class BaysController < ApplicationController
 
     def reset 
         reset_bay
-        redirect_to bay_path(@bay)
+        redirect_to bays_path
     end
 
     private

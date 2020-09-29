@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  #main models' routes
   resources :jobs
   resources :productions
   resources :users

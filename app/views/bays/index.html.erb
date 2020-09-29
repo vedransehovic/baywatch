@@ -19,10 +19,16 @@
                     </ul>
                 <%end%>
             </td></tr>
+            <tr align='left'><td>Agent:</td><td>
+                        <% if bay.user %>
+             <%= bay.user.username  %>
+          <%end%>
+          <br>
+            </td></tr>
         </table>
         <div class="card_menu_bottom">
           <%= link_to 'edit', edit_bay_path(bay)%> 
-         <%= link_to 'reset', "/bays/reset/#{bay.id}" %>
+          <%= link_to 'reset', "/bays/reset/#{bay.id}" %>
         </div>
     </div>
     <div class="card__face card__face--back">chat</div>
