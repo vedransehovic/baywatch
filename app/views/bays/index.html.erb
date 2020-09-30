@@ -6,12 +6,12 @@
       <div class="card">
         <div class="card__face card__face--front">
           <table width="100%"  cellpadding='5'>
-            <tr>
-              <td align='left'>Bay:</td>
-              <td><%= bay.bay_number%></td>
+            <tr bgcolor="#900">
+              <td align='left'>Bay <%= bay.bay_number%></td>
+              <td align='right'></td>
             </tr>
             <tr>
-              <td align="left">Production:</td>
+              <td valign='top' align="left">Production:</td>
               <td><% if bay.production %><%= bay.production.name %><%end%></td>
             </tr>
             <tr>
@@ -30,12 +30,10 @@
               </td>
             </tr>
             <tr align='left'>
-              <td>Agent:</td>
-              <td>
+              <td colspan='2'>Agent:                 
                 <% if bay.user %>
-                  <%= bay.user.username  %>
-                <%end%>
-                <br>
+                  <%= bay.user.username.capitalize  %>
+                <%end%></td>
               </td>
             </tr>
           </table>

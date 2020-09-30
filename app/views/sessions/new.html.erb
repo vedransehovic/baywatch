@@ -15,7 +15,7 @@
     <tr><td><%= label_tag :Username %></td><td> <%= text_field_tag :username %></td></tr>
     <tr><td><%= label_tag :password %></td><td><%= password_field_tag :password %></td></tr>
 </table>
-    <%= submit_tag 'Login' %>
+    <%= submit_tag 'Login', class: 'btn btn-secondary' %>
     <br><br>
 
     <%= link_to image_tag("sign-in-google.png"), "/auth/google_oauth2", method: :post %> 
