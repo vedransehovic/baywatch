@@ -1,7 +1,7 @@
 class BaysController < ApplicationController
 
     def index 
-        @bays = Bay.all 
+        @bays = bays  
     end
 
     def show 
@@ -63,6 +63,14 @@ class BaysController < ApplicationController
     def reset_bay
         set_bay
         @bay.update(date: nil, active: nil, production_id: nil, user_id: nil)
+    end
+
+    def bays 
+        if params[:flag]
+            @bays = current_user.bays 
+        else
+            @bays = Bay.all
+        end
     end
 
 end
