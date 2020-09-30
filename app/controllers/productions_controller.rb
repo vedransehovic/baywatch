@@ -1,7 +1,5 @@
 class ProductionsController < ApplicationController
 
-    before_action :require_login
-
     def index
         @productions = Production.all
     end
@@ -57,7 +55,4 @@ class ProductionsController < ApplicationController
         params.require(:production).permit(:name, :address, :phone, clients_attributes: [:first_name, :last_name, :address, :phone, :email ])
     end
 
-    def require_login
-        redirect_to '/login' unless session.include? :user_id
-    end
 end

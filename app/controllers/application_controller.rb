@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+    before_action :require_login
+
     helper_method :current_user
     
 
@@ -10,5 +12,9 @@ class ApplicationController < ActionController::Base
       else
         @current_user = nil
       end
+    end
+    
+    def require_login
+      redirect_to '/login' unless session.include? :user_id
     end
 end

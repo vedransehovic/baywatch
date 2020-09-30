@@ -1,6 +1,5 @@
 class UsersController < ApplicationController   
-
-    before_action :require_login
+    before_action :require_admin
 
     def index
         @users = User.all
@@ -55,16 +54,10 @@ class UsersController < ApplicationController
         params.require(:user).permit(:username, :email, :phone, :password, :is_admin)
     end
 
-    def require_login
-        #redirect_to '/login' unless session.include? :user_id && current_user.is_admin==true
-        if !session.include? :user_id
-            session[:error] = "You must be logged in as an admin"
-            redirect_to '/login'
-        else
+    def require_admin
             if current_user.is_admin==false || current_user.is_admin==nil
                 session[:error] = "You must be logged in as an admin"
                 redirect_to '/login'
             end
         end
-    end
 end

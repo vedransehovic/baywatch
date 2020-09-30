@@ -1,32 +1,3 @@
 <h1>Production Edit:</h1>
-<%= form_for @production do |f|%>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <br>
-  <br>
-  <%= f.label :address %>
-  <%= f.text_field :address %>
-  <br>
-  <br>
-  <%= f.label :phone %>
-  <%= f.text_field :phone %>
-  <br>
-  <h3>Production Members:</h3>
-  <ul>
-    <% @production.clients.each do |client|%>
-      <li><%= client.name %> | <%= link_to 'delete', production_client_path(@production, client), method: :delete %>  <%= link_to 'edit', edit_production_client_path(@production, client)%> </li>
-    <%end%>
-  </ul>
-  <div id="dynamicInput">
-    Client 1 <br>
-    <label for="production_clients_attributes_1_first_name">First name</label>
-    <input type="text" name="production[clients_attributes][1][first_name]" id="production_clients_attributes_1_first_name" />
-    <label for="production_clients_attributes_1_last_name">Last name</label>
-    <input type="text" name="production[clients_attributes][1][last_name]" id="production_clients_attributes_1_last_name" />
-  </div>
-  <br>
-  <button id="line">Add Client</button>
-  <br>
-  <br>
-  <%= f.submit %>
-<%end%>
+
+<%= render 'form'%>
