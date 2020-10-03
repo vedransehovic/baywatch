@@ -1,5 +1,11 @@
 <h2>Productions:</h2>
 <%= link_to 'new production', new_production_path %>
+<p>
+    <%= form_tag('/productions', method: :get) do%>
+        <%= text_field_tag "query" %>
+        <%= submit_tag "Search" %>
+    <%end%>
+</p>
 <ul>
 <% @productions.each do |production| %>
     <li><%= link_to production.name, production_path(production) %> | <%= link_to 'edit', edit_production_path(production)%> <%= link_to 'delete', production_path(production), method: 'DELETE'%> </li>

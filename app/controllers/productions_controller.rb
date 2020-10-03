@@ -1,7 +1,11 @@
 class ProductionsController < ApplicationController
 
     def index
-        @productions = Production.all
+        if params[:query]
+            @productions = Production.search(params[:query])
+        else
+            @productions = Production.all
+        end
     end
 
     def show
