@@ -1,16 +1,12 @@
 <%= form_for @production do |f|%>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <br>
-  <br>
-  <%= f.label :address %>
-  <%= f.text_field :address %>
-  <br>
-  <br>
-  <%= f.label :phone %>
-  <%= f.text_field :phone %>
-  <br>
-  <br>
+  <table>
+    <tr><td><%= f.label :name %></td><td><%= f.text_field :name %></td></tr>
+    <tr><td></td><td></td></tr>
+    <tr><td><%= f.label :address %></td><td><%= f.text_field :address %></td></tr>
+    <tr><td></td><td></td></tr>
+    <tr><td><%= f.label :phone %></td><td><%= f.text_field :phone %></td></tr>
+  </table>
+  
   <div id="dynamicInput">
     Client 1 <br>
     <label for="production_clients_attributes_1_first_name">First name</label>

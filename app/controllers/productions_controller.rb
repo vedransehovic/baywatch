@@ -22,6 +22,7 @@ class ProductionsController < ApplicationController
         if @production.save
             redirect_to productions_path
         else
+            @errors = @production.errors.full_messages
             render :new
         end
     end

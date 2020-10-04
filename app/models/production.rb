@@ -3,6 +3,8 @@ class Production < ApplicationRecord
     has_many :bays
     has_many :users, through: :bays
 
+    validates :name, presence: true, uniqueness: true
+
     accepts_nested_attributes_for :clients
 
     def self.search(query)
