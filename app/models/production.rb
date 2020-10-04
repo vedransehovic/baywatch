@@ -6,7 +6,8 @@ class Production < ApplicationRecord
     validates :name, presence: true, uniqueness: true
 
     accepts_nested_attributes_for :clients
-
+    
+    #changing / limiting the scope
     def self.search(query)
         Production.where('name LIKE ?', "%#{query}%")
     end

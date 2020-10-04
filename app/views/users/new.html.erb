@@ -1,15 +1,3 @@
 <h1>New User:</h1>
-<%= @user.errors.any? %>
-
-<% if @user.errors.any? %>
-  <div id="error_description">
-    <ul>
-    <% @user.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-    </ul>
-  </div>
-<% end %>
-
-
+<%= render 'errors'%>
 <%= render 'form'%>

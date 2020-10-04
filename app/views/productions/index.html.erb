@@ -1,7 +1,7 @@
 <h2>Productions:</h2>
 <%= link_to 'new production', new_production_path %>
 <p>
-    <%= form_tag('/productions', method: :get) do%>
+    <%= form_tag(productions_path, method: :get) do%>
         <%= text_field_tag "query" %>
         <%= submit_tag "Search" %>
     <%end%>

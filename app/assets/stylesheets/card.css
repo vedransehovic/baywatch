@@ -45,8 +45,9 @@
     bottom   : 0;
   }
 
-  a.card_menu_bottom:link { color:#FFF; text-decoration:none;}
-  a.card_menu_bottom:visited { color: #FFF; text-decoration:none;}
-  a.card_menu_bottom:hover { color: #FFF; text-decoration:underline; }
+  .field_with_errors{
+    border-color: #900;
+    border-style: solid;
+  }
 
   
