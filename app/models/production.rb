@@ -6,7 +6,6 @@ class Production < ApplicationRecord
     validates :name, presence: true, uniqueness: true
 
     accepts_nested_attributes_for :clients
-    
 
     scope :search, ->(query) { where('name LIKE ?', "%#{query}%")}
 
