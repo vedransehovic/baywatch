@@ -7,8 +7,11 @@ class Production < ApplicationRecord
 
     accepts_nested_attributes_for :clients
     
-    #changing / limiting the scope
-    def self.search(query)
-        Production.where('name LIKE ?', "%#{query}%")
-    end
+
+    scope :search, ->(query) { where('name LIKE ?', "%#{query}%")}
+
+    # changed class method below to the line abeve for theatrics and showboating
+    # def self.search(query)
+    #     Production.where('name LIKE ?', "%#{query}%")
+    # end
 end
