@@ -37,6 +37,7 @@ class ProductionsController < ApplicationController
         if @production.update(production_params)
             redirect_to production_path
         else
+            @errors = @production.errors.full_messages
             render :edit
         end
     end
